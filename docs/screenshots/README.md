@@ -1,32 +1,29 @@
 # 截图清单
 
-把截图放在本目录，**文件名严格按下面的命名**（主 README 已经按这些路径引用，改名会导致图片裂开）。
+本目录存放 README 用图，文件名已固定，改名会导致 README 图片裂开。
 
-| 文件名 | 截什么 | 建议 |
+| 文件名 | 内容 | 状态 |
 |---|---|---|
-| `01-paper-light.png` | 白纸底（浅色主题）整窗 | 左栏 + 对话区 + 海洋透出；不要开设置面板 |
-| `02-ink-dark.png` | 墨色底（深色主题）整窗 | 和 01 同一视角，方便对比 |
-| `03-settings-panel.png` | 设置 → 海洋 面板 | 能看清滑杆 / 芯片 / 「恢复默认」 |
-| `04-sharks-multi.png` | 多选种类（例如「经典 + 虎鲨」） | 画面上能看到 2–3 条不同外形的鲨鱼 |
-| `05-interaction.gif` | 鼠标点击驱赶鲨鱼 | 3–5 秒循环，≤ 5MB；可选 |
+| `01-paper-light.png` | 白纸底（浅色主题）整窗，1920×1115 | ✅ |
+| `02-ink-dark.png` | 墨色底（深色主题）整窗，1920×1115 | ✅ |
+| `03-settings-panel.png` | 设置 → 海洋 面板（含鲨鱼多选），1920×1115 | ✅ |
+| `05-interaction.gif` | 点击驱赶鲨鱼的录屏，1200×695 / 25 帧 / 5fps | ✅ |
+
+> 原计划的 `04-sharks-multi.png` 已合并进 `03-settings-panel.png`，不再单独出图。
 
 ## 规格
 
-- 格式：静态图用 **PNG**；动图用 **GIF**（或 MP4，但 README 里用 GIF 更通用）
-- 宽度：**1600–1920px**（Retina 截图缩到一半，避免文件过大）
-- 单张 ≤ **2MB**
-- **不要**包含个人隐私：会话标题、文件路径、token、账号邮箱
+- 静态图：PNG，宽 1920px，单张 ≤ 2MB
+- 动图：GIF，宽 1200px，≤ 5MB
+- 不要包含个人隐私（会话标题、路径、token）
 
-## macOS 怎么截
+## 录屏转 GIF
 
-- 区域截图：`⌘ + ⇧ + 4`
-- 截整个窗口：`⌘ + ⇧ + 4` 然后按 `空格`
-- 录屏：`⌘ + ⇧ + 5`
-
-## 截完检查
+源视频不提交进仓库（`.gitignore` 已忽略 `*.mov`）。新录屏可以：
 
 ```bash
-ls -lh docs/screenshots/
-# README 引用的 4 个文件应存在：
-# 01-paper-light.png  02-ink-dark.png  03-settings-panel.png  04-sharks-multi.png
+# 需要 ffmpeg
+ffmpeg -i input.mov -vf "fps=5,scale=1200:-1:flags=lanczos" -loop 0 05-interaction.gif
 ```
+
+没有 ffmpeg 时，可用 macOS 自带的 AVFoundation（Swift）抽帧，再用 ImageIO 写成 GIF。

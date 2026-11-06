@@ -31,9 +31,13 @@
 |---|---|
 | ![白纸](docs/screenshots/01-paper-light.png) | ![墨色](docs/screenshots/02-ink-dark.png) |
 
-| 设置面板 | 多选鲨鱼 |
-|---|---|
-| ![设置](docs/screenshots/03-settings-panel.png) | ![鲨鱼](docs/screenshots/04-sharks-multi.png) |
+**设置 → 海洋**（含鲨鱼多选、大小、数量、恢复默认）
+
+![设置面板](docs/screenshots/03-settings-panel.png)
+
+**点击驱赶鲨鱼**（录屏转 GIF）
+
+![互动](docs/screenshots/05-interaction.gif)
 
 > 截图清单和命名规则见 [docs/screenshots/README.md](docs/screenshots/README.md)。
 
