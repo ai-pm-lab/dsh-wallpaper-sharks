@@ -1,0 +1,64 @@
+{
+  "name": "dsh-wallpaper-sharks",
+  "version": "0.2.0",
+  "description": "DSH client plugin: the ascii-sharks engine rendered as DeepSeek Harness's full-screen wallpaper / theme background.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "NOTICE.md",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "ascii",
+    "ascii-art",
+    "ocean",
+    "wallpaper",
+    "theme-background",
+    "sharks",
+    "canvas",
+    "boids"
+  ],
+  "author": "ai-pm-lab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ai-pm-lab/dsh-wallpaper-sharks.git"
+  },
+  "homepage": "https://github.com/ai-pm-lab/dsh-wallpaper-sharks#readme",
+  "bugs": {
+    "url": "https://github.com/ai-pm-lab/dsh-wallpaper-sharks/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
